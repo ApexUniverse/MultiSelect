@@ -4,13 +4,11 @@ A Lightning Multi-Select Picklist.
 To use, simply add as part of a form (or without if you'd like):
 
     <aura:attribute name="selectedValues" type="String[]" />
-        <aura:attribute name="options" type="List" default="[
-                                                                            {'label': 'GP', 'value': 'GP', 'selected' : false },
-                                                                            {'label': 'School', 'value': 'School', 'selected' : false },
-                                                                            {'label': 'CAMHS', 'value': 'CAMHS', 'selected' : false },
-                                                                            {'label': 'Social Services', 'value': 'Social Services', 'selected' : false },
-                                                                            {'label': 'Other Clinician', 'value': 'Other Clinician', 'selected' : false },
-                                                                            ]"/>
+    <aura:attribute name="options" type="List" default="[
+                        {'label': 'Red', 'value': 'Red', 'selected' : false },
+                        {'label': 'Green', 'value': 'Green', 'selected' : false },
+                        {'label': 'Blue', 'value': 'Blue', 'selected' : false },
+                         ]"/>
 
     <div class="slds-form-element">
         <label class="slds-form-element__label" for="my-multi-select">Label</label>
