@@ -36,25 +36,12 @@
 
         var options = component.get("v.options_");
 
-        //shift key ADDS to the list (unless clicking on a previously selected item)
-        //also, shift key does not close the dropdown (uses mouse out to do that)
-        if (event.shiftKey) {
-          options.forEach(function(element) {
+        options.forEach(function(element) {
             if (element.value == value) {
               element.selected = selected == "true" ? false : true;
             }
           });
-        } else {
-          options.forEach(function(element) {
-            if (element.value == value) {
-              element.selected = selected == "true" ? false : true;
-            } else {
-              element.selected = false;
-            }
-          });
-          var mainDiv = component.find('main-div');
-          $A.util.removeClass(mainDiv, 'slds-is-open');
-        }
+          
         component.set("v.options_", options);
         var values = helper.getSelectedValues(component);
         var labels = helper.getSelectedLabels(component);
