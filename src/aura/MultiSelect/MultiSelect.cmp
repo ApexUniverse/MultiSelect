@@ -1,12 +1,13 @@
 <aura:component >
 
-  <aura:attribute name="options" type="SelectItem[]" />
-  <aura:attribute name="options_" type="SelectItem[]" />
+  <aura:handler name="init" value="{!this}" action="{!c.init}" />
+
+  <aura:attribute name="options" type="List" />
+  <aura:attribute name="options_" type="List" />
   <aura:attribute name="selectedItems" type="String[]" />
   <aura:attribute name="infoText" type="String" default="Select an option..." />
   <aura:attribute name="width" type="String" default="240px;" />
   <aura:attribute name="dropdownLength" type="Integer" default="5" />
-
 
   <aura:registerEvent name="selectChange" type="c:SelectChange" />
 
@@ -15,8 +16,7 @@
   </aura:method>
 
   <aura:attribute name="dropdownOver" type="Boolean" default="false" />
-
-
+  
   <div aura:id="main-div"  class=" slds-picklist slds-dropdown-trigger slds-dropdown-trigger--click ">
     <button class="slds-button slds-button--neutral slds-picklist__label" style="{!'width:' + v.width }" 
       aria-haspopup="true" onclick="{!c.handleClick}" onmouseleave="{!c.handleMouseOutButton}">
