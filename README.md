@@ -3,14 +3,23 @@ A Lightning Multi-Select Picklist.
 
 To use, simply add as part of a form (or without if you'd like):
 
+    <aura:attribute name="selectedValues" type="String[]" />
+        <aura:attribute name="options" type="List" default="[
+                                                                            {'label': 'GP', 'value': 'GP', 'selected' : false },
+                                                                            {'label': 'School', 'value': 'School', 'selected' : false },
+                                                                            {'label': 'CAMHS', 'value': 'CAMHS', 'selected' : false },
+                                                                            {'label': 'Social Services', 'value': 'Social Services', 'selected' : false },
+                                                                            {'label': 'Other Clinician', 'value': 'Other Clinician', 'selected' : false },
+                                                                            ]"/>
+
     <div class="slds-form-element">
-        <label class="slds-form-element__label" for="my-multi-select">Multi Select!!</label>
+        <label class="slds-form-element__label" for="my-multi-select">Label</label>
         <div class="slds-form-element__control">
-            <c:MultiSelect aura:id="my-multi-select" options="{!v.myOptions}" selectChange="{!c.handleSelectChangeEvent}" selectedItems="{!v.mySelectedItems}" />
+            <c:MultiSelect options="{!v.options}" selectChange="{!c.handleSelectChangeEvent}" selectedItems="{!v.selectedValues}" />
         </div>
     </div>
     
-The multiselect `options` are an array of type `SelectItem[]` and selectedItems is a comma delimited string (`String[]`).
+The multiselect `options` are an array of type `List` and selectedItems is a comma delimited string (`String[]`).
 
 The `handleSelectChangeEvent` method could look like this:
 
