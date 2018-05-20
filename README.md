@@ -35,30 +35,36 @@ Also note, I've added an init handler to the component.
 
     <aura:application access="global" extends="force:slds" >
         
-        <aura:attribute name="options" type="Object[]" default="[
+        <aura:attribute name="options" type="List" default="[
       {
         'label': 'Annual Review',
-        'value': 'Annual Review'
+        'value': 'Annual Review',
+        'selected' : false
       },
       {
         'label': 'Watching Rates',
-        'value': 'Watching Rates'
+        'value': 'Watching Rates',
+        'selected' : false
       },
       {
         'label': 'Initial Contact',
-        'value': 'Initial Contact'
+        'value': 'Initial Contact',
+        'selected' : false
       },
       {
         'label': 'Application',
-        'value': 'Application'
+        'value': 'Application',
+        'selected' : false
       },
       {
         'label': 'Waiting for Qualifying Documentation',
-        'value': 'Waiting for Qualifying Documentation'
+        'value': 'Waiting for Qualifying Documentation',
+        'selected' : false
       },
       {
         'label': 'Qualifying Documentation Review',
-        'value': 'Qualifying Documentation Review'
+        'value': 'Qualifying Documentation Review',
+        'selected' : false
        }]"/>
         
         <div class="slds-form-element">
